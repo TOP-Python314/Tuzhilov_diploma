@@ -1,0 +1,34 @@
+html, body{
+    background-color: #c0c0c0
+}
+
+body{
+    font-family:"Gill Sans", sans-serif
+}
+
+.submit-button-10 {
+    background-color:  #e6e9ed;
+    box-shadow: 0 0 5px #e6e9ed,
+    0 0 25px #e6e9ed;
+    border: 0px;
+    color: black;
+    padding: 10px 20px; 
+    border-radius: 15px; 
+    cursor: pointer; 
+}
+
+.submit-button-10:hover {
+    box-shadow: 0 0 5px #e6e9ed,
+    0 0 25px #e6e9ed, 0 0 50px #e6e9ed,
+    0 0 100px #e6e9ed, 0 0 200px #e6e9ed;
+}
+
+.summa-10{
+    font-size: 30px
+}
+
+a{
+  
+    color: black;
+    font-size: 20px
+}

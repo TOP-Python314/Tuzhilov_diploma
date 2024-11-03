@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>Новая категория</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div>
+      <label for="category_name">
+        Название категории:
+        <input name="category_name" type="text" id="category_name" required>
+      </label>
+    </div>
+    <input type="submit" value="ДОБАВИТЬ">  
+  </form>
+{% endblock %}

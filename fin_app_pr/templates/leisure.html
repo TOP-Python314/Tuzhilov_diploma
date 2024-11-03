@@ -1,0 +1,31 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Досуг</title>
+    <style>
+    a {
+        text-decoration: none; 
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/leisure.css' %}">
+</head>
+<body>
+    <h1>Категория затрат досуг и отдых</h1>
+    <form method="post" class="summa-8">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <label>Введите сумму:</label>
+      <input type="int">
+      <input type="submit" value="ДОБАВИТЬ" class="submit-button-8"> 
+    </form>
+    {% if categories %}  
+    <h2>Введенная сумма: {{ sum_value }}</h2>  
+    {% endif %}
+    <a href="{% url 'categories' %}">На главную</a> 
+</body>
+</html>
+{% endblock %}

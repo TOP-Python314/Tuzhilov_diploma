@@ -1,0 +1,31 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мобильная связь и интернет</title>
+    <style>
+    a {
+        text-decoration: none; /* Убираем подчёркивание */
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+</head>
+<body>
+    <h1>Категория затрат на свзяь и интернет</h1>
+
+    <form method="post" class="summa-9">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <label>Введите сумму:</label>
+      <input type="int">
+      <input type="submit" value="ДОБАВИТЬ" class="submit-button-9"> 
+    </form>
+    {% if categories %}  
+    <h2>Введенная сумма: {{ sum_value }}</h2>  
+    {% endif %}
+    <a href="{% url 'categories' %}">На главную</a> 
+</body>
+</html>
+{% endblock %}

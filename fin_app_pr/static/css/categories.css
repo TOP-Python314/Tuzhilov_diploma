@@ -1,0 +1,19 @@
+div {
+    text-align: center;
+    
+}
+
+body{
+    background_color: #443a4a !important;
+}
+
+#category-list li a {
+    color: white !important; /* Применить приоритет с более специфичным селектором */
+    font-size: 19px
+}
+
+
+#costs-today{
+    background_color: red 
+}
+

@@ -1,0 +1,33 @@
+{% extends "base.html" %}   
+{% load static %}
+{% block title %} Калькулятор расходов{% endblock %}
+
+{% block content %}
+
+<body> 
+<link rel="stylesheet" type="text/css" href="{% static 'css/categories.css' %}">
+  <div id="category-sidebar">
+        <h1>Калькулятор расходов</h1>
+        <ul id="category-list">
+            <li><a href="{% url 'products' %}">Продукты</a></li>
+            <li><a href="{% url 'lunches' %}">Обеды</a></li>
+            <li><a href="{% url 'cloth' %}">Одежда</a></li>
+            <li><a href="{% url 'sport' %}">Спорт</a></li>
+            <li><a href="{% url 'petrol' %}">Бензин</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+            <li><a href="{% url 'home' %}">Дом</a></li>
+            <li><a href="{% url 'leisure' %}">Досуг</a></li>
+            <li><a href="{% url 'mobile' %}">Мобильная связь</a></li>
+            <li><a href="{% url 'internet' %}">Интернет</a></li>
+        </ul>
+  </div>
+
+  <hr> 
+  <div id = "costs-today">
+    <h2>Сегодня потрачено: </h2>
+  
+  </div>
+  <hr> 
+</body>
+    
+{% endblock %}

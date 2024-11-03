@@ -1,0 +1,31 @@
+{% load static %}
+ {% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обеды</title>
+    <style>
+   a {
+    text-decoration: none; 
+   }
+  </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lunches.css' %}">
+</head>
+<body>
+    <h1>Категория затрат на обеды</h1>
+    
+    <form method="post" class="summa-2">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <label>Введите сумму: </label>
+      <input type="number">
+      <input type="submit" value="ДОБАВИТЬ" class="submit-button-2"> 
+    </form>
+    {% if categories %}  
+    <h2>Введенная сумма: {{ sum_value }}</h2>  
+    {% endif %}
+    <a href="{% url 'categories' %}">На главную</a> 
+</body>
+</html>
+{% endblock %}

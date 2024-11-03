@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Бюджет</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/budgets.css' %}">
+</head>
+<body>
+  <div> 
+    <h1>Бюджет</h1>
+    
+    <form action="{% url 'budgets' %}" method="post">  <!-- Указываем действие формы -->
+        {% csrf_token %}
+        <label>Введите сумму:</label>
+        <input type="number" name="amount" step="0.01" required>  <!-- Поле для суммы -->
+        
+        <label>Выберите категорию:</label>
+        <select name="category" required>
+            
+                <option value="{{ category.id }}">{{ category.name }}</option>  <!-- Список категорий -->
+            
+        </select>
+
+        <label>Дата начала:</label>
+        <input type="date" name="period_start" required>  <!-- Поле для даты начала -->
+
+        <label>Дата окончания:</label>
+        <input type="date" name="period_end" required>  <!-- Поле для даты окончания -->
+        
+        <input type="submit" value="ВЫВЕСТИ">
+    </form>
+    
+    <hr>
+    
+    <h2>Записи бюджета:</h2>
+    <ul>
+        {% for budget in budgets %}
+            <li>{{ budget.id }} | Сумма: {{ budget.amount }} руб. | Период: {{ budget.period_start }} - {{ budget.period_end }} | Категория: {{ budget.categories.name }}</li>
+        {% empty %}
+            <li>Нет записей бюджета.</li>
+        {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
+{% endblock %}

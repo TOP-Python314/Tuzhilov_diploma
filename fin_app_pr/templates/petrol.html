@@ -1,0 +1,32 @@
+{% load static %}
+{% block content %}
+    
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Бензин</title>
+    <style>
+   a {
+    text-decoration: none; 
+   }
+   </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/petrol.css' %}">
+</head>
+<body>
+    <h1>Категория затрат на бензин и топливо</h1>
+
+    <form method="post" class="summa-5">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <label>Введите сумму:</label>
+      <input type="int">
+      <input type="submit" value="ДОБАВИТЬ" class="submit-button-5"> 
+    </form>
+    {% if categories %} 
+    <h2>Введенная сумма: {{ sum_value }}</h2> 
+    {% endif %}
+    <a href="{% url 'categories' %}">На главную</a> 
+</body>
+</html>
+{% endblock %}

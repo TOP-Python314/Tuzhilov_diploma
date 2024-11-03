@@ -1,0 +1,32 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет</title>
+     <style>
+    a {
+        text-decoration: none; 
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/internet.css' %}">
+</head>
+<body>
+    <h1>Категория затрат на интернет</h1>
+
+    <form method="post" class="summa-10">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <label>Введите сумму:</label>
+      <input type="int">
+      <input type="submit" value="ДОБАВИТЬ" class="submit-button-10"> 
+    </form>
+    {% if categories %}  
+    <h2>Введенная сумма: {{ sum_value }}</h2>  
+    {% endif %}
+    <a href="{% url 'categories' %}">На главную</a> 
+</body>
+</html>
+{% endblock %}

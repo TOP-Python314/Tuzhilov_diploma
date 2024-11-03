@@ -1,0 +1,34 @@
+html, body{
+    background-color: #21bf95
+}
+
+body{
+    font-family:"Gill Sans", sans-serif
+}
+
+.submit-button-9 {
+    background-color:  lightblue;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan;
+    border: 0px;
+    color: white;
+    padding: 10px 20px; 
+    border-radius: 15px; 
+    cursor: pointer; 
+}
+
+.submit-button-9:hover {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan;
+}
+
+.summa-9{
+    font-size: 30px
+}
+
+a{
+  
+    color: black;
+    font-size: 20px
+}
